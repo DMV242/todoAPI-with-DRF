@@ -26,5 +26,5 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Tests
-      run: |
-        python app/manage.py test
+      run: docker-compose run --rm web sh -c "python manage.py test"
+     
