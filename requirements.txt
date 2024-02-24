@@ -1,0 +1,5 @@
+Django
+psycopg2
+djangorestframework-simplejwt[crypto]
+djangorestframework
+drf-spectacular
