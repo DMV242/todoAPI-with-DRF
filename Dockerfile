@@ -14,8 +14,18 @@ WORKDIR /app
 # Exposer le port 8000
 EXPOSE 8000
 
-# Installation des dépendances Python
-RUN pip install -r /tmp/requirements.txt
+# Installation des dépendances système
+RUN apt-get update && \
+    apt-get install -y python3-venv && \
+    rm -rf /var/lib/apt/lists/*
+
+# Création et activation de l'environnement virtuel
+RUN python3 -m venv /venv
+ENV PATH="/venv/bin:$PATH"
+
+# Installation des dépendances Python dans l'environnement virtuel
+RUN pip install --upgrade pip && \
+    pip install -r /tmp/requirements.txt
 
 # Ajout d'un utilisateur sans répertoire home et sans mot de passe
 RUN useradd -r -s /bin/false appuser
