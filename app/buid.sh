@@ -9,7 +9,7 @@ apt-get install -y build-essential libsqlite3-dev libgeos-dev \
     libpng-dev libtiff-dev libjpeg-dev
 
 # Installer GDAL
-sapt-get install -y gdal-bin libgdal-dev python3-gdal
+apt-get install -y gdal-bin libgdal-dev python3-gdal
 
 # Vérification de l'installation
 echo "GDAL version:"
