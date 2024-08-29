@@ -152,7 +152,7 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Todo List API',
+    'TITLE': 'Todo List API sur render',
     'DESCRIPTION': 'This API provides functionality to create and manage a todo list',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
