@@ -4,3 +4,4 @@ djangorestframework-simplejwt[crypto]
 djangorestframework
 drf-spectacular
 gunicorn
+GDAL
