@@ -85,14 +85,15 @@ WSGI_APPLICATION = 'todoAPI.wsgi.application'
 #     }
 # }
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'db',
-        'PORT': 5432,
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "todoDB",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "database-2.cjkyq680kkpa.us-east-1.rds.amazonaws.com",
+        "PORT": "5432",
     }
 }
 
