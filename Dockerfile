@@ -32,3 +32,5 @@ RUN useradd -r -s /bin/false appuser
 
 # Définition de l'utilisateur par défaut pour l'exécution du conteneur
 USER appuser
+
+CMD ["python3","manage.py","runserver"]
