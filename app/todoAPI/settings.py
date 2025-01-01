@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ks--r%c8lr33p(cru3hkcohupiuqnmdo0e4c=2filnt_p_2!0l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["todoapi-with-drf.onrender.com"]
+ALLOWED_HOSTS = ["goldfish-app-u2axw.ondigitalocean.app"]
 
 
 # Application definition
