@@ -11,10 +11,10 @@ COPY ./app /app
 # Définition du répertoire de travail
 WORKDIR /app
 
-# Exposer le port 8000
+# Exposer le port 8000 pour le serveur Django
 EXPOSE 8000
 
-# Installation des dépendances système
+# Installation des dépendances système nécessaires
 RUN apt-get update && \
     apt-get install -y python3-venv && \
     rm -rf /var/lib/apt/lists/*
@@ -27,10 +27,12 @@ ENV PATH="/venv/bin:$PATH"
 RUN pip install --upgrade pip && \
     pip install -r /tmp/requirements.txt
 
-# Ajout d'un utilisateur sans répertoire home et sans mot de passe
-RUN useradd -r -s /bin/false appuser
+# Création et configuration d'un utilisateur non root
+RUN useradd -r -s /usr/sbin/nologin appuser && \
+    chown -R appuser:appuser /app
 
 # Définition de l'utilisateur par défaut pour l'exécution du conteneur
 USER appuser
 
-CMD ["python3","manage.py","runserver"]
+# Commande par défaut
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
