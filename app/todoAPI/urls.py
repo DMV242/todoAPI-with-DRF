@@ -25,8 +25,7 @@ from django.http import HttpResponse
 
 def home(request):
     return HttpResponse("hello")
-
-
+    
 urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
