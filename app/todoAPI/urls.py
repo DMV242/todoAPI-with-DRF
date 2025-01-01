@@ -21,11 +21,14 @@ from rest_framework_simplejwt.views import (
 )
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView,SpectacularRedocView
+from django.http import HttpResponse
 
-
+def home(request):
+    return HttpResponse("hello")
 
 
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path("api/",include("todo.urls")),
